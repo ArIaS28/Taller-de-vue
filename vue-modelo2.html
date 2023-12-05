@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Importante en Vue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      border: 2px solid #333;
+      width: 250px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s ease;
+    }
+    label:hover {
+      background-color: #e0e0e0;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Checkbox Importante</h1>
+<p>Esta casilla de verificación 'importante' es una característica dinámica del formulario que se agregará a un formulario de lista de compras más adelante, pero aquí la aislamos para ver más fácilmente cómo funciona.</p>
+<div id="app" class="container">
+  <form>
+    <div class="form-group">
+      <p>
+        ¿Elemento importante?
+      </p>
+      <label for="checkbox">
+        <input type="checkbox" id="checkbox" v-model="importante"> 
+        {{ importante ? 'Importante' : 'No Importante' }}
+      </label>
+    </div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modelo2.js"></script>
+
+</body>
+</html>

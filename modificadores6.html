@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evento del Botón Derecho del Ratón</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+    #app > div {
+      width: 160px;
+      padding: 20px;
+      cursor: default;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Evento del Botón Derecho del Ratón</h1>
+
+<div id="app">
+  <div v-on:click.right="cambiarColor" v-bind:style="{ backgroundColor:'hsl('+colorFondo+',80%,80%)' }">
+    <p>Presiona el botón derecho del ratón aquí.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificadores6.js"></script>
+
+</body>
+</html>

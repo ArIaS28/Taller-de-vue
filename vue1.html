@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VUE1</title>
+  <style>
+    #app {
+      display: inline-block;
+      padding: 20px;
+      font-size: x-large;
+      background-color: rgb(24, 211, 180);
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+  {{ message }}
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  // Crea una instancia de Vue con una propiedad de datos
+  const app = Vue.createApp({
+    data() {
+      // Devuelve un objeto que contiene los datos
+      return {
+        message: "MARLON ARIAS"
+      };
+    }
+  });
+
+  // Monta la instancia de Vue en el elemento DOM con id="app"
+  app.mount('#app');
+</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de color de fondo con 'v-bind'</title>
+
+  <style>
+    /* Define el estilo para los elementos "div" dentro del elemento con id "app" */
+    #app > div {
+      width: 200px; /* Establece un ancho de 200px */
+      padding: 20px; /* Establece un relleno de 20px en todos los lados */
+      border: dashed black 1px; /* Establece un borde discontinuo negro de 1px */
+      background-color: lightcoral; /* Establece el color de fondo en rosa claro */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div v-bind:style="{ backgroundColor: 'hsl('+bgVal + ',80%,80%)' }">Observa el color de fondo en esta etiqueta div.</div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      /* Crea una instancia de Vue */
+
+      data() {
+        /* Define una función que devuelve un objeto con un atributo "bgVal" */
+        return {
+          bgVal: 50
+        };
+      }
+    });
+
+    app.mount('#app');
+    /* Monta la instancia de Vue en el elemento con id "app" */
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Compras 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    #app {
+      border: 2px dashed #333;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s ease;
+    }
+    label:hover {
+      background-color: #e0e0e0;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="checkbox"] {
+      width: calc(100% - 12px);
+      margin-bottom: 10px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #444;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      border-radius: 5px;
+      padding: 8px;
+      margin: 5px 0;
+      background-color: #d3fed3;
+      font-weight: bold;
+    }
+    .impClass {
+      background-color: #ffcaca;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Lista de Compras con Artículos Importantes</h1>
+<p>En esta versión de nuestra lista de compras, el usuario puede definir si un artículo es importante. La casilla de verificación es más dinámica porque el texto 'verdadero' o 'falso' cambia para mostrar el estado cuando el usuario la marca.</p>
+<div id="app">
+  <form v-on:submit.prevent="agregarItem">
+    <div class="form-group">
+      <p>
+        ¿Qué necesitas? <br>
+        <input type="text" required placeholder="nombre del artículo.." v-model="nombreArticulo">
+      </p>
+      <p>
+        ¿Cuántos? <br>
+        <input type="number" placeholder="número de artículos.." v-model="cantidadArticulo">
+      </p>
+      <p>
+        ¿Importante?
+        <label for="checkbox">
+          <input type="checkbox" id="checkbox" v-model="articuloImportante">
+          {{ articuloImportante ? 'Importante' : 'No Importante' }}
+        </label>
+      </p>
+      <button type="submit">Agregar artículo</button>
+    </div>
+  </form>
+  <hr>
+
+  <div>
+    <p><strong>Lista de compras:</strong></p>
+    <ul>
+      <li v-for="item in listaCompras" :class="{ impClass: item.importante }">{{ item.nombre }}, {{ item.cantidad }}</li>
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modelo3.js"></script>
+
+</body>
+</html>

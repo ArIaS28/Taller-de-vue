@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Camel case vs kebab case con 'v-bind:style'</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    #app > div {
+      border: 2px dashed #333;
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #add8e6; /* Color azul */
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Camel case vs kebab case con 'v-bind:style'</h1>
+<p>Ambas notaciones, camel case y kebab case entre comillas, pueden usarse para nombres de propiedades CSS con 'v-bind:style', pero se recomienda camel case.</p>
+<div id="app">
+  <div v-bind:style="{ backgroundColor: 'lightBlue', 'font-weight': 'bolder' }">
+    Este div tiene un fondo azul y texto en negrita.
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="css5.js"></script>
+
+</body>
+</html>

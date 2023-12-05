@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>'class' y 'v-bind:class'</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .impClass {
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 15px;
+      margin: 20px;
+    }
+    .yelClass {
+      background-color: rgb(255, 255, 136);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: 'class' y 'v-bind:class'</h1>
+<p>La clase 'impClass' se establece de manera normal con el atributo de clase, y la clase 'yelClass' se establece con v-bind:class. El resultado es que Vue fusiona las clases para que el elemento div pertenezca a ambas clases.</p>
+<div id="app">
+  <div class="impClass" v-bind:class="{ yelClass: isYellow }">Este div pertenece a las clases 'impClass' y 'yelClass'.</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="css3.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Sintaxis de Arrays con 'v-bind:class'</title>
+  <style>
+    .claseImportante {
+      font-weight: bolder;
+    }
+    .claseAmarilla {
+      background-color: rgb(255, 211, 64);
+    }
+    #app > div {
+      border: dashed black 1px;
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Sintaxis de Arrays con 'v-bind:class'</h1>
+<p>La clase 'claseAmarilla' se asigna al elemento div, y la clase 'claseImportante' se asigna si la propiedad 'esImportante' es 'true'.</p>
+<div id="app">
+  <div v-bind:class="[esImportante ? 'claseImportante' : '', 'claseAmarilla']">
+    Este div pertenece a una o dos clases dependiendo de la propiedad esImportante.
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="css6.js"></script>
+
+</body>
+</html>

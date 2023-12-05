@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Compras 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    #app {
+      border: 2px dashed #333;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label, li {
+      display: block;
+      padding: 8px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    label:hover, li:hover {
+      background-color: #f0f0f0;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      background-color: #d3fed3;
+    }
+    .impClass {
+      background-color: #ffcaca;
+    }
+    #ulFound li {
+      text-decoration: line-through;
+      background-color: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Marcar Artículos Encontrados</h1>
+<p>En esta versión de nuestra lista de compras, el usuario puede marcar los artículos encontrados haciendo clic en ellos. Los artículos encontrados se muestran en la lista de elementos encontrados, y los artículos no encontrados aparecen en la parte superior sin tachado. Todos los artículos de la lista de compras se crean en ambas listas con v-for, simplemente se hacen visibles en una lista u otra con v-show dependiendo de la propiedad de datos 'found'.</p>
+<p>Si encuentras un artículo pero haces clic en el artículo incorrecto en la lista, simplemente puedes hacer clic nuevamente para corregir el error.</p>
+<div id="app">
+  <form v-on:submit.prevent="agregarItem">
+    <div class="form-group">
+      <p>
+        ¿Qué necesitas? <br>
+        <input type="text" required placeholder="nombre del artículo.." v-model="nombreArticulo">
+      </p>
+      <p>
+        ¿Cuántos? <br>
+        <input type="number" placeholder="número de artículos.." v-model="cantidadArticulo">
+      </p>
+      <p>
+        ¿Importante?
+        <label for="checkbox">
+          <input type="checkbox" id="checkbox" v-model="articuloImportante">
+          {{ articuloImportante ? 'Importante' : 'No Importante' }}
+        </label>
+      </p>
+      <button type="submit">Agregar artículo</button>
+    </div>
+  </form>
+  <hr>
+
+  <div>
+    <p><strong>Lista de compras:</strong></p>
+    <ul id="ulToFind">
+      <li 
+        v-for="item in listaCompras" 
+        :class="{ impClass: item.important }"
+        @click="item.found=!item.found"
+        v-show="!item.found">
+          {{ item.nombre }}, {{ item.cantidad }}
+      </li>
+    </ul>
+    <ul id="ulFound">
+      <li 
+        v-for="item in listaCompras" 
+        :class="{ impClass: item.important }"
+        @click="item.found=!item.found"
+        v-show="item.found">
+          {{ item.nombre }}, {{ item.cantidad }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modelo4.js"></script>
+
+</body>
+</html>

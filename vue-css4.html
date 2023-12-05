@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Clases Múltiples con 'v-bind:class'</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .claseImportante {
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 15px;
+      margin: 20px;
+    }
+    .claseAmarilla {
+      background-color: rgb(255, 255, 136);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Asignando Clases Múltiples con 'v-bind:class'</h1>
+<p>Se pueden asignar fácilmente múltiples clases en Vue simplemente separándolas con comas.</p>
+<div id="app">
+  <div v-bind:class="{ claseAmarilla: esAmarillo, claseImportante: esImportante }">Esto puede pertenecer tanto a 'claseImportante' como a 'claseAmarilla' dependiendo de las propiedades 'esAmarillo' y 'esImportante' de Vue.</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="css4.js"></script>
+
+</body>
+</html>

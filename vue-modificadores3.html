@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posición del Puntero del Mouse</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+    #app > div {
+      width: 160px;
+      background-color: lightcoral;
+      padding: 20px;
+    }
+    #app span {
+      color: black;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Alerta al presionar la tecla 'L'</h1>
+
+<div id="app">
+  <p>La tecla 'L' genera una alerta:</p>
+  <textarea cols="20" rows="3" v-on:keydown.l="crearAlerta" placeholder="Comienza a escribir.."></textarea>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificadores3.js"></script>
+
+</body>
+</html>

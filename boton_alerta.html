@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>boton de alerta</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>ejemplo: Crear boton de alerta</h1>
+
+<div id="app">
+ 
+  <button v-on:click.once="createAlert">alerta</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    methods: {
+      createAlert() {
+        alert("alerta no imprevista")
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

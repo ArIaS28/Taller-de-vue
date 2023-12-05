@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evento con botón derecho del ratón</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+    #app > div {
+      width: 160px;
+      padding: 20px;
+      cursor: default;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo</h1>
+<p>Se previene el menú desplegable por defecto al hacer clic con el botón derecho en el elemento DIV.</p>
+
+<div id="app">
+  <div v-on:click.right.prevent="cambiarColor" v-bind:style="{ backgroundColor:'hsl('+colorFondo+',80%,80%)' }">
+    <p>Haz clic con el botón derecho del ratón aquí.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificadores8.js"></script>
+
+</body>
+</html>

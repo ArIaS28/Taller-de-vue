@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MARLON ARIAS</title>
+  <style>
+    #app {
+      border: dashed black 0.3cm;
+      width: 200px;
+      padding: 0 10px 10px 10px;
+      background-color: rgb(144, 232, 238);
+      text-align: center;
+    }
+    #app > div {
+      width: 200px;
+      height: 50px;
+      border: solid black 1px;
+      background-color: lightgreen;
+      
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+    }
+    .valido {
+      color: green;
+    }
+    .invalido {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: de ingresar un e-mail </h1>
+
+<div id="app">
+  <label>
+
+    <p>INGRESE SU CORREO:</p>
+    <input type="email" v-model="inpAddress">
+  </label>
+  <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p> 
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        inpAddress: '',
+        feedbackText: '',
+        myClass: 'invalido'
+      }
+    },
+    watch: {
+      inpAddress(newVal,oldVal) {
+        if(!newVal.includes('@')){
+          this.feedbackText = 'el e-mail agregado no es valido';
+          this.myClass = 'invalido';
+        }
+        else if(!oldVal.includes('@') && newVal.includes('@')) {
+          this.feedbackText = 'Perfecto!!';
+          this.myClass = 'valido'
+        }
+        else {
+          this.feedbackText = 'el e-mail agregado es valido :)';
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

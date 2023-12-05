@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MARLON ARIAS</title>
+  <style>
+
+    form {
+    
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 10px;
+    }
+    label {
+        
+      padding: 5px;
+    }
+    label:hover {
+
+      cursor: pointer;
+      background-color: rgb(135, 41, 212);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: 'si' o 'no'</h1>
+<p> su nombre es MARLON ARIAS "SI" O "NO"</p>
+<div id="app">
+  <form>
+    <p>
+      RESPUESTA
+      <label>
+         <input type="checkbox" v-model="chbxVal"> 
+         {{ isI }}
+      </label>
+    </p>
+  </form>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        chbxVal: false
+      }
+    },
+    computed: {
+      isI() {
+        if(this.chbxVal){
+          return 'si'
+        }
+        else {
+          return 'no'
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Obtener el Valor de una Tecla</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+    #verde {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Obtener el Valor de una Tecla del Teclado</h1>
+
+<div id="app">
+  <p>Comienza a escribir dentro del cuadro de texto para registrar el valor de la tecla:</p>
+  <input type="text" v-on:keydown="obtenerTecla">
+  <p id="verde">{{ valorTecla }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificadores2.js"></script>
+
+</body>
+</html>

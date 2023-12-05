@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evento con botón derecho del ratón</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+    #app > div {
+      width: 160px;
+      padding: 20px;
+      cursor: default;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo</h1>
+<p>Haz clic con el botón derecho del ratón en combinación con la tecla 'Ctrl' para cambiar el color del elemento DIV.</p>
+
+<div id="app">
+  <div v-on:click.right.ctrl="cambiarColor" v-bind:style="{ backgroundColor:'hsl('+colorFondo+',80%,80%)' }">
+    <p>Presiona la tecla 'Ctrl' y haz clic con el botón derecho del ratón aquí.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificadores7.js"></script>
+
+</body>
+</html>

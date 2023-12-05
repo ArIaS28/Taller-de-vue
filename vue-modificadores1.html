@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posición del Puntero del Mouse</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Mostrar Alerta una Vez</h1>
+
+<div id="app">
+  <p>El botón a continuación crea una alerta en una ventana emergente, pero solo en el primer clic:</p>
+  <button v-on:click.once="crearAlerta">Crear Alerta</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modificasdores.js"></script>
+
+</body>
+</html>

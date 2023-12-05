@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VUE2</title>
+
+  <style>
+    /* Define el estilo para todos los elementos div */
+    div {
+      margin: 10px; /* Establece un margen de 10px alrededor de cada div */
+      padding: 20px; /* Establece un relleno de 20px dentro de cada div */
+      border: solid rgb(0, 0, 0) 1px; /* Establece un borde sólido negro de 1px alrededor de cada div */
+      display: inline-block; /* Muestra los elementos div en línea */
+    }
+
+    /* Define un estilo adicional para la clase 'pinkBG' */
+    .pinkBG {
+      background-color: rgb(129, 240, 255); /* Establece un fondo de color rosa */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>EJEMPLO DE 'v-bind'</h1>
+
+  <div id="app">
+    <div v-bind:class="vueClass">MARLON ALEXANDER ARIAS</div>
+   
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      /* Crea una instancia de Vue */
+
+      data() {
+        /* Define una función que devuelve un objeto con un atributo 'vueClass' */
+        return {
+          vueClass: "pinkBG"
+        };
+      }
+    });
+
+    app.mount('#app');
+    /* Monta la instancia de Vue en el elemento con id 'app' */
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Binding Bidireccional</title>
+  <style>
+    #app {
+      border: solid 2px #444;
+      width: 250px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+    }
+    input[type="text"] {
+      width: calc(100% - 12px);
+      margin-bottom: 10px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    p {
+      font-size: 14px;
+      margin: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Binding Bidireccional</h1>
+<p>La propiedad inpText está vinculada en dos direcciones: desde el elemento de entrada a la propiedad de Vue y viceversa.</p>
+<p>Intenta cambiar el campo de entrada y observa cómo se actualiza el valor de la propiedad de Vue. También intenta cambiar el valor de inpText dentro del código, haz clic en 'Ejecutar', y observa cómo cambia el valor del elemento de entrada.</p>
+<div id="app">
+  <input type="text" v-model="textoEntrada">
+  <p>Valor de textoEntrada: "{{ textoEntrada }}" </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="modelo1.js"></script>
+
+</body>
+</html>

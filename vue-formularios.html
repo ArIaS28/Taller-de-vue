@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Compras</title>
+  <style>
+    form {
+      border: solid #333 2px;
+      width: 250px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    input, button {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Lista de Compras</h1>
+<div id="app">
+  <form v-on:submit.prevent="agregarItem">
+    <p>
+      ¿Qué necesitas?
+      <input type="text" required placeholder="nombre del artículo.." v-model="nombreArticulo">
+    </p>
+    <p>
+      ¿Cuántos?
+      <input type="number" placeholder="cantidad de artículos.." v-model="cantidadArticulo">
+    </p>
+    <button type="submit">Agregar artículo</button>
+  </form>
+
+  <div>
+    <p>Lista de compras:</p>
+    <ul>
+      <li v-for="item in listaCompras">{{ item.nombre }}, {{ item.cantidad }}</li>
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="formularios.js"></script>
+
+</body>
+</html>

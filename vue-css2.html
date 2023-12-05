@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Seleccionar imágenes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    #app {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 80%;
+      border: 1px dashed #333;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    #app > div {
+      flex-basis: 80px;
+      aspect-ratio: 1;
+      margin: 5px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    #app > div:hover {
+      border-color: brown;
+    }
+    div > img {
+      width: 100%;
+      border: 0;
+      border-radius: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .selClass {
+      border-color: brown;
+      background-color: lightpink;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ejemplo: Seleccionar imágenes con v-bind:class</h1>
+<p>Este es un ejemplo de asignar una clase con Vue (v-bind:class).</p>
+<p>Haz clic en una imagen para asignar o quitar la clase "selClass".</p>
+<div id="app">
+  <div v-for="(img, index) in images" :key="index" v-bind:class="{ selClass: img.sel }" v-on:click="select(index)">
+    <img v-bind:src="img.url">
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+<script src="css2.js"></script>
+
+</body>
+</html>
