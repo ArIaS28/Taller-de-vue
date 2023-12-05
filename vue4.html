@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VUE4</title>
+
+  <style>
+    /* Define el estilo para el elemento con id "app" */
+    #app {
+      border: dashed black 1px; /* Establece un borde discontinuo negro de 1px */
+      width: 130px; /* Establece un ancho de 130px */
+      padding-left: 20px; /* Establece un margen izquierdo de 20px */
+      font-weight: bold; /* Establece el peso de la fuente en negrita */
+      background-color: lightgreen; /* Establece el color de fondo en verde claro */
+    }
+  </style>
+</head>
+
+<body>
+
+<img src="fibra.jpg" alt="typewriter" width="202" height="135">
+
+<div id="app">
+  /* Muestra un párrafo si la variable typewriterCount es mayor que 3 */
+  <p v-if="typewriterCount>3">
+    En stock
+  </p>
+
+  /* Muestra un párrafo si la variable typewriterCount es mayor que 0 */
+  <p v-else-if="typewriterCount>0">
+    LO MEJOR
+  </p>
+
+  /* Muestra un párrafo si la variable typewriterCount es menor o igual a 0 */
+  <p v-else>
+    NO TENEMOS
+  </p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const app = Vue.createApp({
+    /* Crea una instancia de Vue */
+
+    data() {
+      /* Define una función que devuelve un objeto con un atributo "typewriterCount" */
+      return {
+        typewriterCount: 3
+      };
+    }
+  });
+
+  app.mount('#app');
+  /* Monta la instancia de Vue en el elemento con id "app" */
+</script>
+
+</body>
+</html>

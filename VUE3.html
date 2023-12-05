@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>'v-bind' Ejemplo con imagen </title>
+  <style>
+    /* Define el estilo para el elemento con id "app" */
+    #app {
+      border: dashed rgb(3, 8, 255) 1px; /* Establece un borde discontinuo azul de 1px */
+      width: 250px; /* Establece un ancho de 250px */
+      padding: 0 10px 10px 10px; /* Establece un relleno de 0 en la parte superior, 10px en los lados y 10px en la parte inferior */
+    }
+
+    /* Define el estilo para los elementos "img" */
+    img {
+      width: 100%; /* Establece el ancho al 100% */
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <img v-bind:src="url">
+    </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      /* Crea una instancia de Vue */
+
+      data() {
+        /* Define una función que devuelve un objeto con un atributo "url" que contiene la URL de la imagen */
+        return {
+          url: "fibra.jpg"
+        };
+      }
+    });
+
+    app.mount('#app');
+    /* Monta la instancia de Vue en el elemento con id "app" */
+  </script>
+
+</body>
+</html>

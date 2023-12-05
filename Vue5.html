@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-show</title>
+
+  <style>
+    /* Define el estilo para el elemento con id "app" */
+    #app {
+      border: black dashed 1px; /* Establece un borde discontinuo negro de 1px */
+      width: 200px; /* Establece un ancho de 200px */
+      padding: 0 20px 20px 20px; /* Establece un relleno de 0 en la parte superior, 20px en los lados y 20px en la parte inferior */
+    }
+
+    /* Define el estilo para el elemento "div" dentro de #app */
+    #app div {
+      padding: 20px; /* Establece un relleno de 20px en todos los lados */
+      background-color: lightgreen; /* Establece el color de fondo en verde claro */
+      font-weight: bold; /* Establece el peso de la fuente en negrita */
+    }
+  </style>
+</head>
+
+<body>
+    /* Muestra el elemento "div" dentro de #app si la propiedad "showDiv" es verdadera */
+  <div id="app">
+    <div v-show="showDiv">CAMBIE A FALSO PARA OCULTAR EL TEXTO</div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      /* Crea una instancia de Vue */
+
+      data() {
+        /* Define una función que devuelve un objeto con un atributo "showDiv" que se inicializa en verdadero */
+        return {
+          showDiv: true
+        };
+      }
+    });
+
+    app.mount('#app');
+    /* Monta la instancia de Vue en el elemento con id "app" */
+  </script>
+
+</body>
+</html>
